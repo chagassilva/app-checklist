@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <title>TLD Captação</title>
+
+    <meta name="theme-color" content="#1B263B" />
+    <link rel="manifest" href="manifest.json" />
+    <link
+      rel="apple-touch-icon"
+      href="https://ui-avatars.com/api/?name=TLD&background=1B263B&color=F26419&size=512&bold=true"
+    />
+
+    <style>
+      /* Tira todas as margens e faz o Iframe ocupar 100% da tela do celular */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background-color: #edf2f4;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      src="https://script.google.com/macros/s/AKfycbzUkaoSTvbk61D_4mABHDu2mLjL77JkRj7RDdmS_G0ukib4Q-LW9VgwsW5fzD9tcAsHPg/exec"
+      allow="camera; microphone; fullscreen"
+    >
+    </iframe>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("sw.js")
+            .then((reg) => console.log("Motor PWA ligado com sucesso!", reg))
+            .catch((err) => console.log("Erro no motor PWA:", err));
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "id": "/app-checklist/",
+  "name": "TLD - Checklist do Motorista",
+  "short_name": "TLD",
+  "description": "Aplicativo registros de viagem para motoristas TLD.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#EDF2F4",
+  "theme_color": "#1B263B",
+  "dir": "ltr",
+  "lang": "pt-BR",
+  "icons": [
+  {
+    "src": "https://ui-avatars.com/api/?name=TLD&background=F26419&color=1B263B&size=192&bold=true",
+    "sizes": "192x192",
+    "type": "image/png",
+    "purpose": "any maskable"
+  },
+  {
+    "src": "https://ui-avatars.com/api/?name=TLD&background=F26419&color=1B263B&size=512&bold=true",
+    "sizes": "512x512",
+    "type": "image/png",
+    "purpose": "any maskable"
+  }
+]
+}
