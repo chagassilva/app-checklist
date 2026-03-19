@@ -1,4 +1,4 @@
-const CACHE_NAME = "tld-app-v3";
+const CACHE_NAME = "tld-app-v4";
 const urlsToCache = ["./", "./index.html", "./manifest.json"];
 
 // Instala o motor no celular
