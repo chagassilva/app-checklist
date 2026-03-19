@@ -12,13 +12,11 @@
     <link rel="manifest" href="manifest.json" />
 
     <link
-      rel="apple-touch-icon"
+       Simpson apple-touch-icon
       href="https://ui-avatars.com/api/?name=TLD&background=F26419&color=1B263B&size=512&bold=true"
     />
     <style>
-      /* Tira todas as margens e faz o Iframe ocupar 100% da tela do celular */
-      body,
-      html {
+      body, html {
         margin: 0;
         padding: 0;
         height: 100%;
@@ -39,25 +37,29 @@
       allow="camera; microphone; fullscreen"
     >
     </iframe>
-    <script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("sw.js").then((reg) => {
-        console.log("Motor PWA ligado!");
 
-        // Detecta se há uma nova versão esperando para ser instalada
-        reg.addEventListener("updatefound", () => {
-          const newWorker = reg.installing;
-          newWorker.addEventListener("statechange", () => {
-            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
-              // Recarrega a página para aplicar a nova versão v5, v6...
-              window.location.reload();
-            }
+    <script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          // O '?v=7' força o navegador a baixar o sw.js novo
+          navigator.serviceWorker.register("sw.js?v=7").then((reg) => {
+            console.log("PWA: Monitorando atualizações...");
+
+            reg.onupdatefound = () => {
+              const installingWorker = reg.installing;
+              installingWorker.onstatechange = () => {
+                if (installingWorker.state === "installed") {
+                  if (navigator.serviceWorker.controller) {
+                    // Nova versão detectada! Recarrega para aplicar.
+                    console.log("Nova versão encontrada! Atualizando...");
+                    window.location.reload();
+                  }
+                }
+              };
+            };
           });
         });
-      });
-    });
-  }
-</script>
+      }
+    </script>
   </body>
 </html>
