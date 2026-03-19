@@ -39,16 +39,25 @@
       allow="camera; microphone; fullscreen"
     >
     </iframe>
-
     <script>
-      if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-          navigator.serviceWorker
-            .register("sw.js")
-            .then((reg) => console.log("Motor PWA ligado com sucesso!", reg))
-            .catch((err) => console.log("Erro no motor PWA:", err));
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("sw.js").then((reg) => {
+        console.log("Motor PWA ligado!");
+
+        // Detecta se há uma nova versão esperando para ser instalada
+        reg.addEventListener("updatefound", () => {
+          const newWorker = reg.installing;
+          newWorker.addEventListener("statechange", () => {
+            if (newWorker.state === "installed" && navigator.serviceWorker.controller) {
+              // Recarrega a página para aplicar a nova versão v5, v6...
+              window.location.reload();
+            }
+          });
         });
-      }
-    </script>
+      });
+    });
+  }
+</script>
   </body>
 </html>
