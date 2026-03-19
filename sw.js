@@ -1,4 +1,4 @@
-const CACHE_NAME = "tld-app-v5"; // Sempre suba essa versão ao mudar algo
+const CACHE_NAME = "tld-app-v6"; // Sempre suba essa versão ao mudar algo
 const urlsToCache = ["./", "./index.html", "./manifest.json"];
 
 // 1. Instalação: Força o novo SW a se tornar ativo imediatamente
