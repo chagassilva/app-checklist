@@ -1,7 +1,7 @@
 {
   "id": "/app-checklist/",
-  "name": "TLD - Checklist",
-  "short_name": "TLD - Checklist",
+  "name": "TLD - Checklist Motorista",
+  "short_name": "TLD - Checklist Motorista",
   "description": "Aplicativo registros de viagens para motoristas TLD.",
   "start_url": "./index.html",
   "display": "standalone",
