@@ -1,4 +1,4 @@
-const CACHE_NAME = "tld-app-v7"; // Incremente aqui para forçar atualização
+const CACHE_NAME = "tld-app-v8"; // Incremente aqui para forçar atualização
 const urlsToCache = ["./", "./index.html", "./manifest.json"];
 
 // 1. Instalação: Salva os arquivos básicos
